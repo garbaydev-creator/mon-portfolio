@@ -352,32 +352,45 @@
 
 </section>
 
+<!-- On charge la bibliothèque EmailJS depuis internet -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
 <script>
-    // On cible le formulaire par son id "monFormulaire"
+    // On initialise EmailJS avec votre Public Key
+    emailjs.init("KPXkzZk1AfYmaLWqF");
+
     document.getElementById("monFormulaire").addEventListener("submit", function(e) {
-        
-        // "preventDefault" empêche le rechargement de la page (comportement normal d'un formulaire)
         e.preventDefault();
 
-        // On lit ce que l'utilisateur a tapé dans chaque champ
         let nom = document.getElementById("nom").value;
         let email = document.getElementById("email").value;
         let message = document.getElementById("message").value;
 
-        // Vérification : si un champ est vide, on alerte et on s'arrête
         if (nom === "" || email === "" || message === "") {
             alert("Veuillez remplir tous les champs !");
-            return; // "return" = on sort de la fonction, on ne continue pas
+            return;
         }
 
-        // On met le prénom dans le message de confirmation
-        document.getElementById("nomConfirmation").textContent = nom;
+        // Les paramètres envoyés au template EmailJS
+        // "name", "email", "message" doivent correspondre aux {{}} dans le template
+        let params = {
+            name: nom,
+            email: email,
+            message: message
+        };
 
-        // On cache le formulaire
-        document.getElementById("monFormulaire").style.display = "none";
-
-        // On affiche le message de confirmation
-        document.getElementById("messageConfirmation").style.display = "block";
+        // On envoie l'email avec les 3 IDs
+        emailjs.send("service_ikvy4ui", "template_7cqdeb7", params)
+            .then(function() {
+                // Succès — on affiche la confirmation
+                document.getElementById("nomConfirmation").textContent = nom;
+                document.getElementById("monFormulaire").style.display = "none";
+                document.getElementById("messageConfirmation").style.display = "block";
+            })
+            .catch(function(erreur) {
+                // Échec — on affiche l'erreur
+                alert("Erreur lors de l'envoi : " + erreur);
+            });
     });
 </script>
 
