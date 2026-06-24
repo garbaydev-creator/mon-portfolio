@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <style>
+        
+        html {
+    scroll-behavior: smooth;
+}
+/* "transition" = durée de l'animation (0.3s = rapide) */
+/* "transform" = déplace l'élément (translateY = vers le haut) */
+.carte-projet {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Ce qui se passe quand la souris est dessus */
+.carte-projet:hover {
+    transform: translateY(-8px); /* monte de 8px */
+    border-color: #4f9eff !important; /* bordure bleue */
+}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #4f9eff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav ul a:hover {
+            color: #fff;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 span {
+            color: #0681fc;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            background-color: #4f9eff;
+            color: #fff;
+            padding: 14px 36px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #3a8aee;
+        }
+    </style>
+</head>
+<body>
+    <!-- Bouton flottant qui apparaît quand on descend dans la page -->
+<button 
+    id="btnHaut" 
+    onclick="window.scrollTo({top:0, behavior:'smooth'})"
+    style="display:none; position:fixed; bottom:30px; right:30px; background:#4f9eff; color:#fff; border:none; border-radius:50%; width:46px; height:46px; font-size:20px; cursor:pointer; z-index:999;">
+    ↑
+</button>
+
+<script>
+    // "window.onscroll" = se déclenche à chaque fois que l'utilisateur fait défiler
+    window.onscroll = function() {
+        let btn = document.getElementById("btnHaut");
+        // Si on a défilé plus de 300px vers le bas, on affiche le bouton
+        if (window.scrollY > 300) {
+            btn.style.display = "block";
+        } else {
+            btn.style.display = "none";
+        }
+    };
+</script>
+
+    <nav>
+        <div class="logo">Garbay.dev</div>
+    <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    </nav>
+    
+
+    <section class="hero" id="accueil" style="text-align: center; padding: 100px 20px;">
+
+    <!-- La photo ronde : border-radius:50% = cercle parfait -->
+    <img 
+        src="photo.jpg" 
+        alt="Photo de ABAKAR Mahamat Idriss"
+        style="width:150px; height:150px; border-radius:50%; object-fit:cover; border:3px solid #4f9eff; margin-bottom:30px;">
+
+    <h1 style="font-size: 52px; margin-bottom: 16px;">
+        Bonjour, je suis <span style="color:#4f9eff">ABAKAR Mahamat Idriss</span>
+    </h1>
+    <p style="font-size: 18px; color: #aaa; margin-bottom: 40px;">
+        Informaticien, passionné par la création de sites modernes et la cybersécurité
+    </p>
+    <a href="#projets" class="btn">Voir mes projets</a>
+
+</section>
+    <section id="apropos" style="padding: 80px 60px; max-width: 800px; margin: auto;">
+    <h2 style="font-size: 32px; margin-bottom: 20px;">À propos <span style="color:#4f9eff">de moi</span></h2>
+    <p style="color: #aaa; font-size: 16px; line-height: 1.8;">
+        Je m'appelle ABAKAR Mahamat Idriss, informaticien passionné par le développement web 
+        et la cybersécurité. J'accompagne des étudiants dans leurs projets techniques et 
+        j'apprends continuellement de nouvelles technologies pour créer des solutions modernes.
+    </p>
+</section>
+<section id="competences" style="padding: 80px 60px; background-color: #111;">
+    <h2 style="font-size: 32px; text-align:center; margin-bottom: 40px;">
+        Mes <span style="color:#4f9eff">compétences</span>
+    </h2>
+
+    <!-- Les 4 cartes icônes que vous aviez déjà -->
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 60px;">
+        <div style="background:#1a1a1a; border:1px solid #333; border-radius:10px; padding:24px 32px; text-align:center; min-width:140px;">
+            <p style="font-size:28px;">💻</p>
+            <p style="margin-top:10px; color:#fff;">HTML / CSS</p>
+        </div>
+        <div style="background:#1a1a1a; border:1px solid #333; border-radius:10px; padding:24px 32px; text-align:center; min-width:140px;">
+            <p style="font-size:28px;">⚡</p>
+            <p style="margin-top:10px; color:#fff;">JavaScript</p>
+        </div>
+        <div style="background:#1a1a1a; border:1px solid #333; border-radius:10px; padding:24px 32px; text-align:center; min-width:140px;">
+            <p style="font-size:28px;">🔒</p>
+            <p style="margin-top:10px; color:#fff;">Cybersécurité</p>
+        </div>
+        <div style="background:#1a1a1a; border:1px solid #333; border-radius:10px; padding:24px 32px; text-align:center; min-width:140px;">
+            <p style="font-size:28px;">🗄️</p>
+            <p style="margin-top:10px; color:#fff;">PostgreSQL</p>
+        </div>
+    </div>
+
+    <!-- Barres de progression : montrent le niveau en % -->
+    <div style="max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 20px;">
+
+        <!-- Une barre = un label + une barre grise avec une barre bleue dedans -->
+        <div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                <span style="color:#fff; font-size:14px;">HTML / CSS</span>
+                <span style="color:#4f9eff; font-size:14px;">75%</span>
+            </div>
+            <!-- La barre grise = le fond -->
+            <div style="background:#333; border-radius:20px; height:8px;">
+                <!-- La barre bleue = le niveau, width = le pourcentage -->
+                <div style="background:#4f9eff; width:75%; height:8px; border-radius:20px;"></div>
+            </div>
+        </div>
+
+        <div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                <span style="color:#fff; font-size:14px;">JavaScript</span>
+                <span style="color:#4f9eff; font-size:14px;">50%</span>
+            </div>
+            <div style="background:#333; border-radius:20px; height:8px;">
+                <div style="background:#4f9eff; width:50%; height:8px; border-radius:20px;"></div>
+            </div>
+        </div>
+
+        <div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                <span style="color:#fff; font-size:14px;">Cybersécurité</span>
+                <span style="color:#4f9eff; font-size:14px;">60%</span>
+            </div>
+            <div style="background:#333; border-radius:20px; height:8px;">
+                <div style="background:#4f9eff; width:60%; height:8px; border-radius:20px;"></div>
+            </div>
+        </div>
+
+        <div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                <span style="color:#fff; font-size:14px;">PostgreSQL</span>
+                <span style="color:#4f9eff; font-size:14px;">65%</span>
+            </div>
+            <div style="background:#333; border-radius:20px; height:8px;">
+                <div style="background:#4f9eff; width:65%; height:8px; border-radius:20px;"></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- Section stats : les chiffres qui donnent confiance -->
+<section style="padding: 60px; background:#0d0d0d; text-align:center;">
+    <div style="display:flex; justify-content:center; gap:60px; flex-wrap:wrap;">
+
+        <!-- Chaque stat = un chiffre + une description -->
+        <div>
+            <!-- id="c1" sert à JavaScript pour animer ce chiffre -->
+            <p id="c1" style="font-size:42px; font-weight:bold; color:#4f9eff;">0</p>
+            <p style="color:#aaa; font-size:14px; margin-top:4px;">Projets réalisés</p>
+        </div>
+        <div>
+            <p id="c2" style="font-size:42px; font-weight:bold; color:#4f9eff;">0</p>
+            <p style="color:#aaa; font-size:14px; margin-top:4px;">Étudiants accompagnés</p>
+        </div>
+        <div>
+            <p id="c3" style="font-size:42px; font-weight:bold; color:#4f9eff;">0</p>
+            <p style="color:#aaa; font-size:14px; margin-top:4px;">Années d'expérience</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Le script JavaScript qui anime les chiffres de 0 jusqu'au vrai chiffre -->
+<script>
+    // "animerChiffre" est une fonction : un bloc de code réutilisable
+    // id = quel élément animer, cible = le chiffre final, duree = temps en ms
+    function animerChiffre(id, cible, duree) {
+        let debut = 0; // on commence à 0
+        let element = document.getElementById(id); // on cherche l'élément HTML par son id
+        let increment = cible / (duree / 16); // combien ajouter à chaque image (60fps)
+        
+        // setInterval = répète une action toutes les X millisecondes
+        let timer = setInterval(function() {
+            debut += increment;
+            if (debut >= cible) {
+                debut = cible; // on s'arrête exactement au chiffre cible
+                clearInterval(timer); // on arrête la répétition
+            }
+            element.textContent = Math.floor(debut); // affiche le chiffre arrondi
+        }, 16);
+    }
+
+    // On lance les 3 animations — changez les chiffres selon votre réalité !
+    animerChiffre("c1", 5, 1500);  // 5 projets en 1.5 secondes
+    animerChiffre("c2", 30, 2000); // 30 étudiants en 2 secondes
+    animerChiffre("c3", 2, 1000);  // 2 ans en 1 seconde
+</script>
+<section id="projets" style="padding: 80px 60px;">
+    <h2 style="font-size:32px; text-align:center; margin-bottom:40px;">
+        Mes <span style="color:#4f9eff">projets</span>
+    </h2>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:24px; max-width:1000px; margin:auto;">
+
+        <div class="carte-projet" style="background:#111; border:1px solid #333; border-radius:12px; padding:28px;"></div>
+            <p style="color:#4f9eff; font-size:13px; margin-bottom:8px;">DÉVELOPPEMENT WEB</p>
+            <h3 style="font-size:20px; margin-bottom:12px;">Assigame</h3>
+            <p style="color:#aaa; font-size:14px; line-height:1.7;">
+                Plateforme e-commerce réalisée avec Spring Boot, PostgreSQL et JavaScript. Gestion des produits, utilisateurs et catégories.
+            </p>
+            <div style="margin-top:16px; display:flex; gap:8px; flex-wrap:wrap;">
+                <span style="background:#1a2a3a; color:#4f9eff; font-size:12px; padding:4px 10px; border-radius:20px;">Spring Boot</span>
+                <span style="background:#1a2a3a; color:#4f9eff; font-size:12px; padding:4px 10px; border-radius:20px;">PostgreSQL</span>
+                <span style="background:#1a2a3a; color:#4f9eff; font-size:12px; padding:4px 10px; border-radius:20px;">JavaScript</span>
+            </div>
+        </div>
+
+        <div class="carte-projet" style="background:#111; border:1px solid #333; border-radius:12px; padding:28px;">
+            <p style="color:#4f9eff; font-size:13px; margin-bottom:8px;">PORTFOLIO</p>
+            <h3 style="font-size:20px; margin-bottom:12px;">Ce portfolio</h3>
+            <p style="color:#aaa; font-size:14px; line-height:1.7;">
+                Site portfolio personnel conçu from scratch en HTML, CSS et JavaScript. Design sombre et moderne.
+            </p>
+            <div style="margin-top:16px; display:flex; gap:8px; flex-wrap:wrap;">
+                <span style="background:#1a2a3a; color:#4f9eff; font-size:12px; padding:4px 10px; border-radius:20px;">HTML</span>
+                <span style="background:#1a2a3a; color:#4f9eff; font-size:12px; padding:4px 10px; border-radius:20px;">CSS</span>
+                <span style="background:#1a2a3a; color:#4f9eff; font-size:12px; padding:4px 10px; border-radius:20px;">JavaScript</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section id="contact" style="padding: 80px 60px; max-width: 600px; margin: auto;">
+    <h2 style="font-size: 32px; text-align:center; margin-bottom:8px;">
+        Me <span style="color:#4f9eff">contacter</span>
+    </h2>
+    <p style="color:#aaa; text-align:center; margin-bottom:40px;">Vous avez un projet ? Écrivez-moi !</p>
+
+    <form id="monFormulaire" style="display: flex; flex-direction: column; gap: 16px;">
+
+        <!-- "id" sur chaque champ permet à JavaScript de lire ce que l'utilisateur a tapé -->
+        <input 
+            type="text" 
+            id="nom"
+            placeholder="Votre nom"
+            style="background:#111; border:1px solid #333; border-radius:8px; padding:14px 16px; color:#fff; font-size:15px; outline:none;">
+
+        <input 
+            type="email" 
+            id="email"
+            placeholder="Votre email"
+            style="background:#111; border:1px solid #333; border-radius:8px; padding:14px 16px; color:#fff; font-size:15px; outline:none;">
+
+        <textarea 
+            id="message"
+            placeholder="Votre message" 
+            rows="5"
+            style="background:#111; border:1px solid #333; border-radius:8px; padding:14px 16px; color:#fff; font-size:15px; outline:none; resize:vertical;"></textarea>
+
+        <button 
+            type="submit"
+            style="background:#4f9eff; color:#fff; padding:14px; border:none; border-radius:8px; font-size:16px; cursor:pointer;">
+            Envoyer le message
+        </button>
+
+    </form>
+
+    <!-- Ce div est caché au départ (display:none), JavaScript va l'afficher après envoi -->
+    <div id="messageConfirmation" style="display:none; margin-top:24px; background:#0d2a0d; border:1px solid #1a5c1a; border-radius:8px; padding:20px; text-align:center;">
+        <p style="color:#4caf50; font-size:18px; margin-bottom:8px;">Message envoyé !</p>
+        <p style="color:#aaa; font-size:14px;">Merci <span id="nomConfirmation"></span>, je vous répondrai bientôt.</p>
+    </div>
+
+</section>
+
+<script>
+    // On cible le formulaire par son id "monFormulaire"
+    document.getElementById("monFormulaire").addEventListener("submit", function(e) {
+        
+        // "preventDefault" empêche le rechargement de la page (comportement normal d'un formulaire)
+        e.preventDefault();
+
+        // On lit ce que l'utilisateur a tapé dans chaque champ
+        let nom = document.getElementById("nom").value;
+        let email = document.getElementById("email").value;
+        let message = document.getElementById("message").value;
+
+        // Vérification : si un champ est vide, on alerte et on s'arrête
+        if (nom === "" || email === "" || message === "") {
+            alert("Veuillez remplir tous les champs !");
+            return; // "return" = on sort de la fonction, on ne continue pas
+        }
+
+        // On met le prénom dans le message de confirmation
+        document.getElementById("nomConfirmation").textContent = nom;
+
+        // On cache le formulaire
+        document.getElementById("monFormulaire").style.display = "none";
+
+        // On affiche le message de confirmation
+        document.getElementById("messageConfirmation").style.display = "block";
+    });
+</script>
+
+<footer style="text-align:center; padding:30px; border-top:1px solid #222; color:#555; font-size:14px;">
+    © 2026 ABAKAR Mahamat Idriss — Tous droits réservés
+</footer>
+
+</body>
+
+</html>
