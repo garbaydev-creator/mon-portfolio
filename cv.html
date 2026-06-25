@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>CV - ABAKAR Mahamat Idriss</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .cv {
+            background: white;
+            width: 800px;
+            padding: 50px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* EN-TÊTE */
+        .entete {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            border-bottom: 3px solid #4f9eff;
+            padding-bottom: 24px;
+            margin-bottom: 30px;
+        }
+
+        .entete img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #4f9eff;
+        }
+
+        .entete h1 {
+            font-size: 28px;
+            color: #111;
+        }
+
+        .entete p {
+            color: #555;
+            font-size: 15px;
+            margin-top: 6px;
+        }
+
+        .entete .contacts {
+            margin-top: 10px;
+            font-size: 13px;
+            color: #777;
+            display: flex;
+            gap: 20px;
+        }
+
+        /* SECTIONS */
+        .section {
+            margin-bottom: 28px;
+        }
+
+        .section h2 {
+            font-size: 16px;
+            color: #4f9eff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 6px;
+            margin-bottom: 14px;
+        }
+
+        .item {
+            margin-bottom: 14px;
+        }
+
+        .item h3 {
+            font-size: 15px;
+            color: #111;
+        }
+
+        .item .date {
+            font-size: 12px;
+            color: #4f9eff;
+            margin: 2px 0 4px;
+        }
+
+        .item p {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* COMPÉTENCES */
+        .competences {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #e8f0fe;
+            color: #1a6ecc;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        /* BOUTON IMPRESSION */
+        .btn-print {
+            display: block;
+            margin: 20px auto 0;
+            background: #4f9eff;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="cv">
+
+    <!-- EN-TÊTE -->
+    <div class="entete">
+        <img src="photo.jpg" alt="Photo">
+        <div>
+            <h1>ABAKAR Mahamat Idriss</h1>
+            <p>Informaticien — Développeur Web & Cybersécurité</p>
+            <div class="contacts">
+                <span>📧 abakar.okey@gmail.com</span>
+                <span>🌐 garbaydev-creator.github.io/mon-portfolio</span>
+                <span>📍 Lomé, Togo</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROFIL -->
+    <div class="section">
+        <h2>Profil</h2>
+        <p>Informaticien passionné par le développement web et la cybersécurité. 
+        J'accompagne des étudiants dans leurs projets techniques et je crée des 
+        solutions web modernes et sécurisées.</p>
+    </div>
+
+    <!-- EXPÉRIENCE -->
+    <div class="section">
+        <h2>Expérience</h2>
+        <div class="item">
+            <h3>Accompagnateur de projets étudiants</h3>
+            <p class="date">2025 — Present</p>
+            <p>Aide à la réalisation de projets web complets incluant backend Spring Boot, 
+            base de données PostgreSQL et frontend HTML/CSS/JavaScript.</p>
+        </div>
+        <div class="item">
+            <h3>Développeur Web Frontend</h3>
+            <p class="date">2026 — Present</p>
+            <p>Création de sites web modernes et responsives. Réalisation du portfolio 
+            personnel avec formulaire de contact fonctionnel.</p>
+        </div>
+    </div>
+
+    <!-- FORMATION -->
+    <div class="section">
+        <h2>Formation</h2>
+        <div class="item">
+            <h3>Informatique — Développement & Cybersécurité</h3>
+            <p class="date">En cours</p>
+            <p>Formation autodidacte en développement web et sécurité informatique.</p>
+        </div>
+    </div>
+
+    <!-- COMPÉTENCES -->
+    <div class="section">
+        <h2>Compétences</h2>
+        <div class="competences">
+            <span class="tag">HTML / CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Packet Tracer</span>
+            <span class="tag">Cybersécurité</span>
+            <span class="tag">Vlan, InterVlan</span>
+            <span class="tag">Vmware</span>
+            <span class="tag">Routage avancée</span>
+        </div>
+    </div>
+
+    <!-- PROJETS -->
+    <div class="section">
+        <h2>Projets</h2>
+        <div class="item">
+            <h3>Assigame — Plateforme e-commerce</h3>
+            <p class="date">2026</p>
+            <p>Accompagnement dans la réalisation d'une plateforme complète avec 
+            Spring Boot, PostgreSQL, et JavaScript.</p>
+        </div>
+        <div class="item">
+            <h3>Portfolio personnel — garbaydev-creator.github.io</h3>
+            <p class="date">2026</p>
+            <p>Site portfolio en ligne avec formulaire de contact EmailJS, 
+            mode clair/sombre et animations JavaScript.</p>
+        </div>
+    </div>
+
+    <!-- BOUTON IMPRIMER -->
+    <button class="btn-print" onclick="window.print()">
+        🖨️ Télécharger en PDF
+    </button>
+
+</div>
+</body>
+</html>
